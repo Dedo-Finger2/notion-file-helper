@@ -1,6 +1,11 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"log"
+
+	"github.com/Dedo-Finger2/notion-file-helper/audio"
+)
 
 /*
 	Este projeto consiste em um
@@ -23,4 +28,15 @@ import "fmt"
 
 func main() {
 	fmt.Println("Hello, World!")
+
+	var p string
+
+	fmt.Scan(&p)
+
+	s, err := audio.GetAudioFileSizeFromPath(p)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	fmt.Printf("%.2f", s)
 }
