@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/Dedo-Finger2/notion-file-helper/audio"
+	"github.com/Dedo-Finger2/notion-file-helper/utils"
 )
 
 /*
@@ -33,10 +33,11 @@ func main() {
 
 	fmt.Scan(&p)
 
-	s, err := audio.GetAudioFileSizeFromPath(p)
+	sb, smb, err := utils.GetFileSizeFromPath(p)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	fmt.Printf("%.2f", s)
+	fmt.Println(sb)
+	fmt.Printf("%.2f", smb)
 }
