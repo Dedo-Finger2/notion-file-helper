@@ -2,9 +2,8 @@ package main
 
 import (
 	"fmt"
-	"log"
 
-	"github.com/Dedo-Finger2/notion-file-helper/utils"
+	"github.com/Dedo-Finger2/notion-file-helper/audio"
 )
 
 /*
@@ -33,11 +32,5 @@ func main() {
 
 	fmt.Scan(&p)
 
-	sb, smb, err := utils.GetFileSizeFromPath(p)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	fmt.Println(sb)
-	fmt.Printf("%.2f", smb)
+	_ = audio.CutMp3AudioInHalf(p)
 }
